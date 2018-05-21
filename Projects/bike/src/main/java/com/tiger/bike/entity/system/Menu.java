@@ -1,4 +1,7 @@
 package com.tiger.bike.entity.system;
+
+import java.util.List;
+
 /**
  * 菜单信息
  */
@@ -6,10 +9,11 @@ public class Menu {
 	private Integer id;//主键
 	private String name;//菜单名
 	private String url;//菜单对应页面url
-	private Integer parent;//父菜单
-	private Integer level;//级别
+	private String icon;//菜单图标
+	private Integer parentid;//父菜单
 	private Integer order;//排序
 	private String remark;//备注
+	private List<Menu> childMenus;//子菜单
 	public Integer getId() {
 		return id;
 	}
@@ -28,17 +32,17 @@ public class Menu {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public Integer getParent() {
-		return parent;
+	public Integer getParentid() {
+		return parentid;
 	}
-	public void setParent(Integer parent) {
-		this.parent = parent;
+	public void setParentid(Integer parentid) {
+		this.parentid = parentid;
 	}
-	public Integer getLevel() {
-		return level;
+	public String getIcon() {
+		return icon;
 	}
-	public void setLevel(Integer level) {
-		this.level = level;
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	public Integer getOrder() {
 		return order;
@@ -51,5 +55,11 @@ public class Menu {
 	}
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+	public List<Menu> getChildMenus() {
+		return childMenus;
+	}
+	public void setChildMenus(List<Menu> childMenus) {
+		this.childMenus = childMenus;
 	}
 }
